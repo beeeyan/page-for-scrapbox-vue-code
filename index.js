@@ -17,7 +17,6 @@ async function loadAllScripts(urls) {
 
 $(function () {
     const args = {};
-    alert(document.referrer);
     // ?以降の結果を取得する
     document.location.search.substring(1).split('&').forEach(
         (s) => {
