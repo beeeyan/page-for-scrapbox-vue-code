@@ -16,7 +16,7 @@ function loadStyle(url){
             link_tag.type = 'text/css';
             link_tag.href = url;
             link_tag.onload = resolve;
-            document.body.appendChild(link_tag);
+            document.head.appendChild(link_tag);
         })
 }
 
