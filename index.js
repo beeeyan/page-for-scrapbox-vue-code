@@ -8,11 +8,31 @@ function loadScript(url) {
         })
 }
 
+function loadStyle(){
+    return new Promise(
+        (resolve) => {
+            const link_tag = document.createElement('link');
+            link_tag.rel = 'stylesheet';
+            link_tag.type = 'text/css';
+            link_tag.href = url;
+            link_tag.onload = resolve;
+            document.body.appendChild(link_tag);
+        })
+}
+
+
 async function loadAllScripts(urls) {
     for(let url of urls){
         await loadScript(url);
     }
 }
+
+async function loadAllStyles(urls){
+    for(let url of urls){
+        await loadStyle(url);
+    }
+}
+
 
 
 $(function () {
@@ -25,12 +45,21 @@ $(function () {
             args[name] = decodeURIComponent(value);
         })
     const codelist = args['code'];
+    const stylelist = args['style'];
+
     console.log('codelist', codelist);
+    console.log('stylelist', stylelist);
 
     if (codelist) {
         let urls = codelist.split(/,/);
         loadAllScripts(urls);
     }
+
+    if(stylelist){
+        let urls = stylelist.split(/,/);
+        loadAllStyles(urls);
+    }
+
 }
 
 )
