@@ -8,7 +8,7 @@ function loadScript(url) {
         })
 }
 
-function loadStyle(){
+function loadStyle(url){
     return new Promise(
         (resolve) => {
             const link_tag = document.createElement('link');
