@@ -35,7 +35,7 @@ async function loadAllStyles(urls){
 
 
 
-$(function () {
+window.addEventListener('DOMContentLoaded', function(){
     const args = {};
     // ?以降の結果を取得する
     document.location.search.substring(1).split('&').forEach(
