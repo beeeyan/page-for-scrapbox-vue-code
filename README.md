@@ -1,2 +1,2 @@
-# page-for-scrapbox
+# page-for-scrapbox-vue-code
 Public page for scrapbox
